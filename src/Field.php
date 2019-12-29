@@ -2,8 +2,12 @@
 
 class Field
 {
-    public function __construct(string $key, string $name, bool $required)
-    {
+    public function __construct(
+        string $key,
+        string $mappedKey,
+        string $mappedType = 'string',
+        bool $required = false
+    ) {
     }
 
     public function key(): string

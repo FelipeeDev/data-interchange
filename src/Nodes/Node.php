@@ -1,4 +1,4 @@
-<?php namespace FelipeeDev\DataInterchange;
+<?php namespace FelipeeDev\DataInterchange\Nodes;
 
 class Node
 {
