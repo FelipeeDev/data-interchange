@@ -4,5 +4,5 @@ use FelipeeDev\DataInterchange\DataHandler;
 
 interface Extractor
 {
-    public function extract(): DataHandler;
+    public function extract(Channel $channel): DataHandler;
 }

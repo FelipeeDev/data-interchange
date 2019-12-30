@@ -2,10 +2,12 @@
 
 use FelipeeDev\DataInterchange\DataHandler;
 use FelipeeDev\DataInterchange\Input\Channel;
-use FelipeeDev\DataInterchange\Input\Extractor;
 
-class Query implements Extractor
+class Node
 {
+    public function __construct(Node $node)
+    {
+    }
 
     public function extract(Channel $channel): DataHandler
     {

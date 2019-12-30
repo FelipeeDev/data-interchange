@@ -1,9 +1,10 @@
-<?php namespace FelipeeDev\DataInterchange\NodeTypes;
+<?php namespace FelipeeDev\DataInterchange\Input\Extractors;
 
-use FelipeeDev\DataInterchange\Node;
 use FelipeeDev\DataInterchange\DataHandler;
+use FelipeeDev\DataInterchange\Input\Channel;
+use FelipeeDev\DataInterchange\Input\Extractor;
 
-class CsvReader implements NodeType
+class Csv implements Extractor
 {
     /** @var string  */
     private $delimiter;
@@ -24,7 +25,7 @@ class CsvReader implements NodeType
         $this->path = $path;
     }
 
-    public function extract(): DataHandler
+    public function extract(Channel $channel): DataHandler
     {
 
     }
