@@ -8,13 +8,27 @@ class Input
     /** @var Channel[] */
     private $channels = [];
 
-    public function __construct(bool $iterable)
+    /** @var LocalWriter */
+    private $localWriter;
+
+    public function __construct(LocalWriter $localWriter)
     {
-        $this->iterable = $iterable;
+        $this->localWriter = $localWriter;
     }
 
     final public function pushChannel(Channel $channel)
     {
         $this->channels[] = $channel;
+    }
+
+    final public function handle()
+    {
+        foreach ($this->channels as $channel) {
+            if ($channel->isPersistTemporary()) {
+                $this->localWriter->persist($channel);
+            }
+        }
+
+        return new StreamHandler($this->channels);
     }
 }

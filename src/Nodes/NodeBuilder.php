@@ -16,11 +16,11 @@ class NodeBuilder
     /** @var Mapper */
     private $mapper;
 
-    public function __construct()
+    public function __construct(Input $input, Output $output, $mapper)
     {
-        $this->input = new Input();
-        $this->output = new Output();
-        $this->mapper = new Mapper();
+        $this->input = $input;
+        $this->output = $output;
+        $this->mapper = $mapper;
     }
 
     public function pushInputChannel(InputChannel $inputChannel)
